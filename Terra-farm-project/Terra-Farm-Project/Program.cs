@@ -62,7 +62,7 @@ _              _     _         _            _ _ os
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             
             Task.Delay(1000).Wait();
-            Console.WriteLine("Presents...");
+            Console.WriteLine("Presents..");
             Console.Clear() ;
 
 

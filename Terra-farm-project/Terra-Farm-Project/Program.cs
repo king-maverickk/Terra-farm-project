@@ -27,6 +27,7 @@ namespace Terra_Farm_Project
                 if (!PromptYesNo("Do you want to play again? Yes/No"))
                 {
                     break; // exit the loop and end program
+                    // new something
                 }
 
                 Console.Clear();
@@ -37,6 +38,7 @@ namespace Terra_Farm_Project
         {
             string playerName;
             int badEnding = 0;
+            
 
             // start of the game
             Console.WriteLine("Hello friend");
@@ -59,15 +61,68 @@ namespace Terra_Farm_Project
                 Console.WriteLine("Please press enter...");
                 Console.ReadLine();
                 Console.Clear();
-                Console.WriteLine("You walk up to an oddly shaped building that says house of magic on the side of it");
+                Console.WriteLine("You walk up to an oddly shaped building that says ");
+                Console.WriteLine("*********************************");
+                Console.WriteLine("**                             **");
+                Console.WriteLine("**  / \\  The house of   / \\    **");
+                Console.WriteLine("**  | |       Magic     | |    **");
+                Console.WriteLine("**                             **");
+                Console.WriteLine("*********************************");
                 Console.WriteLine("You look at it weirdly but pay it no mind");
                 Console.WriteLine("Do you want to walk in?");
                 Console.WriteLine("Yes/No"); // second choice of the game, if they say no, they get a bad ending
                 if (ReadYes())
                 {
+                    
                     Console.WriteLine("You walk into the building and see a potrait of a man on the wall");
-                    Console.WriteLine("You look at it and see that it is");
-                    Console.WriteLine("");
+                    Console.WriteLine("He seems to be watching you, the portrait's line of site is directed at the door.");
+                    Console.WriteLine("Do you want to approach the portrait?");
+                    Console.WriteLine("Yes/No");
+                    if (ReadYes())
+                    {
+                        Console.WriteLine("You walk up to the portrait and see that his name was Edward Elmore");
+                        Console.WriteLine("He seems to be looking at you with a stern expression");
+                        Console.WriteLine("Do you want to talk to him?");
+                        Console.WriteLine("Yes/No");
+                        if (ReadYes())
+                        {
+                            Console.WriteLine("You starting talking to it");
+                            Console.WriteLine("The attendant standing behind you jugdes you and tells you to stop talking to it");
+                            Console.WriteLine("She then tells you to follow her");
+                            Console.WriteLine("do you want to?");
+                            Console.WriteLine("Yes/No");
+                            if (ReadYes())
+                            {
+                                Console.Clear();
+                                Console.WriteLine("You give the man in the portrait your soul and he helps you make water for the village");
+                                Console.WriteLine("The village is saved and you are hailed as a hero");
+                                Console.WriteLine("Congratulations, you win!");
+                                badEnding++;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("You refuse to give the man in the portrait your soul and he gets angry");
+                                Console.WriteLine("He curses you and you are turned into a frog");
+                                
+                            }
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("You ignore the man in the portrait and he gets angry");
+                            Console.WriteLine("He curses you and you are turned into a frog");
+                            badEnding++;
+                        }
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("You ignore the man in the portrait and he gets angry");
+                        Console.WriteLine("He curses you and you are turned into a frog");
+                        badEnding++;
+                    }
+                    
                 }
                 else
                 {
@@ -108,5 +163,6 @@ namespace Terra_Farm_Project
             var input = (Console.ReadLine() ?? string.Empty).Trim().ToLowerInvariant();
             return input == "y" || input == "yes";
         }
+        
     }
 }

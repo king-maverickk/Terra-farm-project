@@ -25,7 +25,6 @@ namespace Terra_Farm_Project
 
                 // Ask to play again and require a clear Y/N response (case-insensitive)
                 if (!PromptYesNo("Do you want to play again? Yes/No"))
-                {
                     break; // exit the loop and end program
                     
                 }
@@ -155,7 +154,8 @@ _              _     _         _            _ _ os
                                 Console.Clear();
                                 Console.WriteLine("You refuse to give the man in the portrait your soul and he gets angry");
                                 Console.WriteLine("He curses you and you are turned into a frog");
-                                
+                                badEnding++;
+                                Console.ReadLine();
                             }
                         }
                         else

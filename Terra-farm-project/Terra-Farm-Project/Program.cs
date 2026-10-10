@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Terra_Farm_Project
 {
+    
     internal class Encounters
     {
+        private static int badEnding = 0; 
+
         //Encounters
         public static void Encounter1()
         {
@@ -19,29 +22,33 @@ namespace Terra_Farm_Project
 
         static void Main(string[] args)
         {
+
+            
+
+
             while (true)
             {
                 PlayOnce();
 
                 // Ask to play again and require a clear Y/N response (case-insensitive)
-                if (!PromptYesNo("Do you want to play again? Yes/No"))
+                if (!PromptYesNo($"Do you want to play again? Yes/No (Bad endings: {badEnding})"))
                     break; // exit the loop and end program
-                    
-                }
+
+            }
 
                 Console.Clear();
             }
-        }
+        
 
         private static void PlayOnce()
         {
             string playerName;
-            int badEnding = 0;
 
 
 
 
-            Console.Title = "Kudzi Studios - The K Game";
+
+            Console.Title = "Kudzi Studios - The K Game"; // stats the name of the game and the studio
 
             // Set Kudzi Studios to Blue
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -61,7 +68,9 @@ _              _     _         _            _ _ os
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             
             Task.Delay(1000).Wait();
+            Console.Clear() ;
             Console.WriteLine("Presents..");
+            Task.Delay(1000).Wait();
             Console.Clear() ;
 
 
@@ -82,8 +91,9 @@ _              _     _         _            _ _ os
 
 
             Console.ResetColor();
-            Console.WriteLine("\nPress any key to exit...");
+            Console.WriteLine("\nPress any key to start...");
             Console.ReadKey();
+            Console.Clear();
 
 
 
@@ -190,7 +200,7 @@ _              _     _         _            _ _ os
                 Console.WriteLine("Why are you dressed so weirdly then?"); // you don't agree to being the person they are looking for
                 Console.WriteLine("Actually, just get out of here then!");
                 badEnding++;
-                Console.WriteLine("Please press enter and reset the game");
+                Console.WriteLine("Please press enter");
                 Console.ReadLine();
             }
         }

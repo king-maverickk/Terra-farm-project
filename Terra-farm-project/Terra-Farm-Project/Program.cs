@@ -69,6 +69,26 @@ namespace Terra_Farm_Project
             string playerName;
 
 
+            Console.Title = "potion book"; // the book that lets the player see their elements
+            Console.ForegroundColor = ConsoleColor.Blue;
+
+            string Book = @"_________________________________
+    /                                 \
+   |   |                           |   |
+   |   |   kudzi studios           |   |
+   |   |                           |   |
+   |   |   The K game              |   |
+   |   |                           |   |
+   |   |   -- Potion Recipe Book --|   |
+   |   |                           |   |
+   |   |                           |   |
+    \_________________________________/
+       \_______________________________/";
+
+
+
+
+
 
             Console.Title = "potion room dramatic title"; //the title tha will always play when entering the potion room
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -220,15 +240,22 @@ _              _     _         _            _ _ os
                                 Console.WriteLine("You are now entering...");
                                 Task.Delay(100).Wait();
 
-                                Console.WriteLine($"{PotionRoom}");
+                                Console.WriteLine($"{PotionRoom}");// first time in the potion room 
                                 Console.WriteLine("");
                                 Console.WriteLine("");
                                 Console.WriteLine("You enter and are met by a work bench with potions and viles of all sorts");
                                 Console.WriteLine("You're amazed by all the magic around you...Magic");
                                 Console.WriteLine("upon closer inspection you realize that these aren't potions filled with wonder and whimsy");
                                 Console.WriteLine("They're all Labeled with elements from the periodic table!");
-                                Console.WriteLine("")
-                                Console.WriteLine(
+                                Console.WriteLine("You try to ask the portrait about whats going on but the door loses before you're able to get a word in");
+                                Console.WriteLine("You remember what the village person said to you. You need to make water. ");
+                                Console.Clear();
+                                Console.WriteLine("");
+                                Console.WriteLine("CHAPTER 2: Let there be water");
+                                Console.ReadLine();
+                                Console.WriteLine("On the work bench you see a book called the Potion recipe book");
+                                
+
 
 
 

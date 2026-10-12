@@ -5,9 +5,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Terra_Farm_Project
 {
-    
+
     internal class Encounters
     {
         private static int badEnding = 0;
@@ -15,7 +16,7 @@ namespace Terra_Farm_Project
         //Chemical system
         public static readonly Dictionary<(string, string), string> Recipes = new Dictionary<(string, string), string>()
         {
-            { ("Hydrogen", "Oxygen"), "Water" },
+            { ("Hydrogen", "Oxygen"), "Water" }, // Dictonary of chemicals
             { ("sodium", "Chlorine"), "salt" },
             { ("Water", "Carbon Dioxide"), "Carbonic acide" },
             { ("Sulfur", "Oxygen"), "Sulfur Dioxide" },
@@ -30,7 +31,7 @@ namespace Terra_Farm_Project
             string second = (first == chem1) ? chem2 : chem1; //makes so that ordering doesn't matter
 
 
-            if (Recipes.TryGetValue((first, second), out string result )) // This gets the elements from the dictionary and compares if
+            if (Recipes.TryGetValue((first, second), out string result)) // This gets the elements from the dictionary and compares if
             {
                 return $"Success! combining {first} and {second} created {result}!";
             }
@@ -41,15 +42,15 @@ namespace Terra_Farm_Project
 
         }
 
-        
+
         public Encounters() { }
 
         static void Main(string[] args)
         {
-
             
 
 
+            
             while (true)
             {
                 PlayOnce();
@@ -72,7 +73,7 @@ namespace Terra_Farm_Project
             Console.Title = "potion book"; // the book that lets the player see their elements
             Console.ForegroundColor = ConsoleColor.Blue;
 
-            string Book = @"_________________________________
+            string RecipeBook = @"_________________________________
     /                                 \
    |   |                           |   |
    |   |   kudzi studios           |   |
@@ -157,6 +158,15 @@ _              _     _         _            _ _ os
             Console.WriteLine("\nPress any key to start...");
             Console.ReadKey();
             Console.Clear();
+
+
+
+
+            // list of elements
+            string ElementList = "1 – Hydrogen (H)     11 – Sodium (Na)\r\n2 – Helium (He)       12 – Magnesium (Mg)\r\n3 – Lithium (Li)      13 – Aluminum (Al)\r\n4 – Beryllium (Be)    14 – Silicon (Si)\r\n5 – Boron (B)         15 – Phosphorus (P)\r\n6 – Carbon (C)        16 – Sulfur (S)\r\n7 – Nitrogen (N)      17 – Chlorine (Cl)\r\n8 – Oxygen (O)        18 – Argon (Ar)\r\n9 – Fluorine (F)      19 – Potassium (K)\r\n10 – Neon (Ne)        20 – Calcium (Ca)\r\n";
+
+
+
 
 
 
@@ -253,7 +263,14 @@ _              _     _         _            _ _ os
                                 Console.WriteLine("");
                                 Console.WriteLine("CHAPTER 2: Let there be water");
                                 Console.ReadLine();
+                                Console.Clear();
                                 Console.WriteLine("On the work bench you see a book called the Potion recipe book");
+                                Console.Write($"{RecipeBook}");
+                                Console.WriteLine($"");
+                                Console.WriteLine("You open it ");
+                                Console.WriteLine($"{ElementList}");
+                                Console.WriteLine("");
+                                Console.WriteLine("This is the recip")
                                 
 
 
@@ -323,6 +340,8 @@ _              _     _         _            _ _ os
             var input = (Console.ReadLine() ?? string.Empty).Trim().ToLowerInvariant();
             return input == "y" || input == "yes";
         }
+            
+
         
-    }
+    }    
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -12,7 +12,7 @@ namespace Terra_Farm_Project
     {
         private static int badEnding = 0;
 
-        //Encounters
+        //Chemical system
         public static readonly Dictionary<(string, string), string> Recipes = new Dictionary<(string, string), string>()
         {
             { ("Hydrogen", "Oxygen"), "Water" },
@@ -27,21 +27,21 @@ namespace Terra_Farm_Project
             string chem2 = chemical2.Trim();
 
             string first = string.Compare(chem1, chem2, StringComparison.OrdinalIgnoreCase) < 0 ? chem1 : chem2;
-            string second = first == chem1 ? chem1 : chem1; //makes so that ordering doesn't matter
+            string second = (first == chem1) ? chem2 : chem1; //makes so that ordering doesn't matter
 
 
             if (Recipes.TryGetValue((first, second), out string result )) // This gets the elements from the dictionary and compares if
             {
-                return $"Success! combining{first} and {second} created {result}!";
+                return $"Success! combining {first} and {second} created {result}!";
             }
-            return $"Fizzel... Combing {first} and {second} caused a little puff of grey smoke.";
+            return $"Fizzle... Combing {first} and {second} caused a little puff of grey smoke.";
 
 
 
 
         }
 
-        //Chemicals
+        
         public Encounters() { }
 
         static void Main(string[] args)
@@ -67,6 +67,25 @@ namespace Terra_Farm_Project
         private static void PlayOnce()
         {
             string playerName;
+
+
+
+            Console.Title = "potion room dramatic title"; //the title tha will always play when entering the potion room
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+            string PotionRoom = @"
+                                  ╔═══════════════════════════════════════════════════╗
+                                  ║                                                   ║
+                                  ║                                                   ║ 
+                                  ║               ⚗️ POTION ROOM ⚗️                    +
+                                  ║                                                     +
+                                  ║    ""Brewing, Distillation & Alchemy ""           ║
+                                  ║                                                   ║
+                                  ╚═══════════════════════════════════════════════════╝";
+
+
+
+
 
 
 
@@ -177,7 +196,7 @@ _              _     _         _            _ _ os
                             {
                                 Console.Clear();
                                 Console.WriteLine("You follow the her and end up losing her along the way ");
-                                Console.WriteLine("You get lost in the ever expanding haulways");
+                                Console.WriteLine("You get lost in the ever expanding hallways");
                                 Console.WriteLine("you do not make it out.");
                                 badEnding++;
                                 Console.ReadLine();
@@ -197,7 +216,19 @@ _              _     _         _            _ _ os
                                 Console.WriteLine("please press enter to continue.");
                                 Console.ReadLine();
 
-                               
+                                Console.Clear();
+                                Console.WriteLine("You are now entering...");
+                                Task.Delay(100).Wait();
+
+                                Console.WriteLine($"{PotionRoom}");
+                                Console.WriteLine("");
+                                Console.WriteLine("");
+                                Console.WriteLine("You enter and are met by a work bench with potions and viles of all sorts");
+                                Console.WriteLine("You're amazed by all the magic around you...Magic");
+                                Console.WriteLine("upon closer inspection you realize that these aren't potions filled with wonder and whimsy");
+                                Console.WriteLine("They're all Labeled with elements from the periodic table!");
+                                Console.WriteLine("")
+                                Console.WriteLine(
 
 
 

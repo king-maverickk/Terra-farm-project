@@ -159,28 +159,45 @@ _              _     _         _            _ _ os
                                 Console.ReadLine();
 
                             }
-                            else
+                            else 
                             {
                                 Console.Clear();
-                                Console.WriteLine("You refuse to give the man in the portrait your soul and he gets angry");
-                                Console.WriteLine("He curses you and you are turned into a frog");
-                                badEnding++;
+                                Console.WriteLine("You refuse to go with the her"); // first convo with the portraite
+                                Console.WriteLine("She looks visuably annoyed and walks away");
+                                Console.WriteLine("You go closer to the portrait and this time it starts talking to you");
+                                Console.WriteLine("you are the one that was sent here to make this town prosperous");
+                                Console.WriteLine("I was tasked with that same duty but I was umsuccessful.");
+                                Console.WriteLine($"My dear child {playerName}");
+                                Console.WriteLine("Please be careful in these halls. The stretch and turn and change.");
+                                Console.WriteLine("Enough with the chit chat! let me show you to the postion room");
+                                Console.WriteLine("please press enter to continue.");
                                 Console.ReadLine();
+
+                                
+
+
+
                             }
                         }
                         else
                         {
                             Console.Clear();
-                            Console.WriteLine("You ignore the man in the portrait and he gets angry");
-                            Console.WriteLine("He curses you and you are turned into a frog");
+                            Console.WriteLine("You ignore the man and start talking to the attendant that was waiting for you");
+                            Console.WriteLine("You follow her and lose her");
+                            Console.WriteLine("you are lost in the halls and don't make it out");
+                            Console.WriteLine("please press enter to restart..."); // you get lot in the halls
+                            Console.ReadLine();
                             badEnding++;
                         }
                     }
                     else
                     {
                         Console.Clear();
-                        Console.WriteLine("You ignore the man in the portrait and he gets angry");
-                        Console.WriteLine("He curses you and you are turned into a frog");
+                        Console.WriteLine("You ignore the man and start talking to the attendant that was waiting for you");
+                        Console.WriteLine("You follow her and lose her");
+                        Console.WriteLine("you are lost in the halls and don't make it out");
+                        Console.WriteLine("please press enter to restart...");// you get lost in the halls
+                        Console.ReadLine();
                         badEnding++;
                     }
                     

@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,12 +10,35 @@ namespace Terra_Farm_Project
     
     internal class Encounters
     {
-        private static int badEnding = 0; 
+        private static int badEnding = 0;
 
         //Encounters
-        public static void Encounter1()
+        public static readonly Dictionary<(string, string), string> Recipes = new Dictionary<(string, string), string>()
         {
-            Console.WriteLine("You walk toward the door of an oddly shaped building that says house of magic on the side");
+            { ("Hydrogen", "Oxygen"), "Water" },
+            { ("sodium", "Chlorine"), "salt" },
+            { ("Water", "Carbon Dioxide"), "Carbonic acide" },
+            { ("Sulfur", "Oxygen"), "Sulfur Dioxide" },
+        };
+
+        public static string CombinChems(string chemical1, string chemical2)
+        {
+            string chem1 = chemical1.Trim(); //Allows for uppercasing letters
+            string chem2 = chemical2.Trim();
+
+            string first = string.Compare(chem1, chem2, StringComparison.OrdinalIgnoreCase) < 0 ? chem1 : chem2;
+            string second = first == chem1 ? chem1 : chem1; //makes so that ordering doesn't matter
+
+
+            if (Recipes.TryGetValue((first, second), out string result )) // This gets the elements from the dictionary and compares if
+            {
+                return $"Success! combining{first} and {second} created {result}!";
+            }
+            return $"Fizzel... Combing {first} and {second} caused a little puff of grey smoke.";
+
+
+
+
         }
 
         //Chemicals
@@ -173,7 +197,7 @@ _              _     _         _            _ _ os
                                 Console.WriteLine("please press enter to continue.");
                                 Console.ReadLine();
 
-                                
+                               
 
 
 

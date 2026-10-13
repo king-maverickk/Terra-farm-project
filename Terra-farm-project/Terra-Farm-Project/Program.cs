@@ -259,19 +259,46 @@ _              _     _         _            _ _ os
                                 Console.WriteLine("They're all Labeled with elements from the periodic table!");
                                 Console.WriteLine("You try to ask the portrait about whats going on but the door loses before you're able to get a word in");
                                 Console.WriteLine("You remember what the village person said to you. You need to make water. ");
+
+
                                 Console.Clear();
                                 Console.WriteLine("");
                                 Console.WriteLine("CHAPTER 2: Let there be water");
                                 Console.ReadLine();
                                 Console.Clear();
                                 Console.WriteLine("On the work bench you see a book called the Potion recipe book");
-                                Console.Write($"{RecipeBook}");
+                                Console.Write($"{RecipeBook}"); // first time opening the book
+                                Console.WriteLine("");
+                                Console.WriteLine("press enter to continue");
+                                Console.ReadLine() ;
                                 Console.WriteLine($"");
                                 Console.WriteLine("You open it ");
-                                Console.WriteLine($"{ElementList}");
+                                Console.WriteLine($"{ElementList}"); // The element list that can be added to
                                 Console.WriteLine("");
-                                Console.WriteLine("This is the recip")
-                                
+                                Console.WriteLine("This is the recipebook. It shows you a list of all the elements present in the lab");
+                                Console.WriteLine("you will have to find more and more elements along the course of the game.");
+
+                                Console.WriteLine("Since the villiager requested for you to make water.");
+                                Console.WriteLine("press enter to go to the workbench");
+                                Console.ReadLine();
+                                Console.Clear();
+                                Console.WriteLine("Please enter your first Element!");
+                                string chemInput1 = Console.ReadLine();
+                                Console.WriteLine("");
+                                Console.WriteLine("");
+
+                                Console.WriteLine("Please enter your second Element");
+                                string chemInput2 = Console.ReadLine();
+
+                                // Calls to the chemical system
+                                   string combinationResult = CombinChems(chemInput1, chemInput2);
+                                   Console.WriteLine();
+                                Console.WriteLine($"{combinationResult}"); // first chemical reaction
+                                Console.WriteLine("WELL DONE! ");
+                                Console.WriteLine("You");
+
+
+
 
 
 

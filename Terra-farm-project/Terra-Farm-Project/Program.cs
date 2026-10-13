@@ -47,23 +47,23 @@ namespace Terra_Farm_Project
 
         static void Main(string[] args)
         {
-            
-
 
             
-            while (true)
-            {
-                PlayOnce();
 
-                // Ask to play again and require a clear Y/N response (case-insensitive)
-                if (!PromptYesNo($"Do you want to play again? Yes/No (Bad endings: {badEnding})"))
-                    break; // exit the loop and end program
+                while (true)
+                {
+                    PlayOnce();
 
-            }
+                    // Ask to play again and require a clear Y/N response (case-insensitive)
+                    if (!PromptYesNo($"Do you want to play again? Yes/No (Bad endings: {badEnding})"))
+                        break; // exit the loop and end program
+
+                }
 
                 Console.Clear();
             }
-        
+
+
 
         private static void PlayOnce()
         {
@@ -130,12 +130,12 @@ _              _     _         _            _ _ os
 
             // Set The K Game to DarkBlue (or you can keep it Blue if you want them matching)
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            
+
             Task.Delay(1000).Wait();
-            Console.Clear() ;
+            Console.Clear();
             Console.WriteLine("Presents..");
             Task.Delay(1000).Wait();
-            Console.Clear() ;
+            Console.Clear();
 
 
 
@@ -204,7 +204,7 @@ _              _     _         _            _ _ os
                 Console.WriteLine("Yes/No"); // second choice of the game, if they say no, they get a bad ending
                 if (ReadYes())
                 {
-                    
+
                     Console.WriteLine("You walk into the building and see a potrait of a man on the wall");
                     Console.WriteLine("He seems to be watching you, the portrait's line of site is directed at the door.");
                     Console.WriteLine("Do you want to approach the portrait?");
@@ -232,7 +232,7 @@ _              _     _         _            _ _ os
                                 Console.ReadLine();
 
                             }
-                            else 
+                            else
                             {
                                 Console.Clear();
                                 Console.WriteLine("You refuse to go with the her"); // first convo with the portraite
@@ -270,7 +270,7 @@ _              _     _         _            _ _ os
                                 Console.Write($"{RecipeBook}"); // first time opening the book
                                 Console.WriteLine("");
                                 Console.WriteLine("press enter to continue");
-                                Console.ReadLine() ;
+                                Console.ReadLine();
                                 Console.WriteLine($"");
                                 Console.WriteLine("You open it ");
                                 Console.WriteLine($"{ElementList}"); // The element list that can be added to
@@ -291,12 +291,16 @@ _              _     _         _            _ _ os
                                 string chemInput2 = Console.ReadLine();
 
                                 // Calls to the chemical system
-                                   string combinationResult = CombinChems(chemInput1, chemInput2);
-                                   Console.WriteLine();
+                                string combinationResult = CombinChems(chemInput1, chemInput2);
+                                Console.WriteLine();
                                 Console.WriteLine($"{combinationResult}"); // first chemical reaction
-                                Console.WriteLine("WELL DONE! ");
-                                Console.WriteLine("You");
+                                while ( combinationResult != "Water" )
+                                {
+                                    Console.WriteLine("That doesn't look quite right. Try some new elements");
 
+                                }
+                                Console.WriteLine("WELL DONE!");
+                                Console.WriteLine("You have made Water")
 
 
 
@@ -326,7 +330,7 @@ _              _     _         _            _ _ os
                         Console.ReadLine();
                         badEnding++;
                     }
-                    
+
                 }
                 else
                 {
@@ -367,8 +371,8 @@ _              _     _         _            _ _ os
             var input = (Console.ReadLine() ?? string.Empty).Trim().ToLowerInvariant();
             return input == "y" || input == "yes";
         }
-            
 
+    
         
     }    
 }

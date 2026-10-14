@@ -285,12 +285,13 @@ _              _     _         _            _ _ os
 
                                 string combinationResult = string.Empty;
                                 while (combinationResult != "Success! combining Hydrogen and Oxygen created Water!")
-                                {                // Loop that will keep asking for elements until the player makes water
+                                {  // Loop that will keep asking for elements until the player makes water
                                   Console.Clear();
+                                  
+                                  Console.WriteLine("");
+                                  Console.WriteLine("");
+                                  Console.WriteLine($"{ElementList}");
                                   Console.WriteLine("Tip: Capitalize the first letter of the element you are entering");
-                                  Console.WriteLine("");
-                                  Console.WriteLine("");
-                                    Console.WriteLine($"                                                                                                         {ElementList}");
                                   Console.WriteLine("Please enter your first Element!");
                                   string chemInput1 = Console.ReadLine();
                                   Console.WriteLine("");
@@ -307,18 +308,66 @@ _              _     _         _            _ _ os
                                 }
 
 
-
+                                Console.WriteLine("");
                                 Console.WriteLine("WELL DONE!");
                                 Console.WriteLine("You have made Water");
+                                Console.WriteLine("You have saved the town from dying of thirst");
+                                Console.WriteLine("Do you want to go outside?");
+                                Console.WriteLine("Yes/No");
+                                if (ReadYes())
+                                {
+                                    Console.Clear();// You save the town 
+                                    Console.WriteLine("You go outside and see the man that you met when you woke up");
+                                    Console.WriteLine("You approach him and he thanks you for helping him and the town");
+                                    Console.WriteLine("You have completed the first steps");
+                                    Console.WriteLine("The world of chemisty is vast and full of possibilities");
+                                    Console.WriteLine("Are you ready?");
+                                    Console.WriteLine("Yes/No");
+                                    if (ReadYes())
+                                    {
+                                        Console.Clear();// You continue the game and get to the next chapter
+                                        Console.WriteLine("You have chosen to continue your journey");
+                                        Console.WriteLine("You will be faced with many challenges and obstacles");
+                                        Console.WriteLine("But you are ready for them!");
+                                        Console.WriteLine($"Good luck on your journey, {playerName}");
+                                        Console.WriteLine("Please press enter to continue...");
+                                        Console.ReadLine();
+                                        Console.Clear();
 
-                                
+
+
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();// You end the game shortly 
+                                        Console.WriteLine("You have chosen to end your journey here");
+                                        Console.WriteLine("It is sad to see you go");
+                                        Console.WriteLine("But the K game will always be there for you");
+                                        Console.WriteLine($"Goodbye, {playerName}");
+                                        Console.WriteLine("Please press enter to end the game...");
+                                        Console.ReadLine();
+                                        return;
+
+                                    }
+
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("You stay inside and the town dies of thirst");
+                                    Console.WriteLine("You Were supposed to be the hero of the town, but you failed them");
+                                    Console.WriteLine("shame on you"); // you don't go outside after making water
+                                    badEnding++;
 
 
 
 
 
 
-                            }
+
+                                }
                         }
                         else
                         {

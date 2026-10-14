@@ -281,26 +281,37 @@ _              _     _         _            _ _ os
                                 Console.WriteLine("Since the villiager requested for you to make water.");
                                 Console.WriteLine("press enter to go to the workbench");
                                 Console.ReadLine();
-                                Console.Clear();
-                                Console.WriteLine("Please enter your first Element!");
-                                string chemInput1 = Console.ReadLine();
-                                Console.WriteLine("");
-                                Console.WriteLine("");
+                               
 
-                                Console.WriteLine("Please enter your second Element");
-                                string chemInput2 = Console.ReadLine();
+                                string combinationResult = string.Empty;
+                                while (combinationResult != "Success! combining Hydrogen and Oxygen created Water!")
+                                {                // Loop that will keep asking for elements until the player makes water
+                                  Console.Clear();
+                                  Console.WriteLine("Tip: Capitalize the first letter of the element you are entering");
+                                  Console.WriteLine("");
+                                  Console.WriteLine("");
+                                    Console.WriteLine($"                                                                                                         {ElementList}");
+                                  Console.WriteLine("Please enter your first Element!");
+                                  string chemInput1 = Console.ReadLine();
+                                  Console.WriteLine("");
+                                  Console.WriteLine("");
+                                  Console.WriteLine("Please enter your second Element");
+                                  string chemInput2 = Console.ReadLine();
 
-                                // Calls to the chemical system
-                                string combinationResult = CombinChems(chemInput1, chemInput2);
-                                Console.WriteLine();
-                                Console.WriteLine($"{combinationResult}"); // first chemical reaction
-                                while ( combinationResult != "Water" )
-                                {
-                                    Console.WriteLine("That doesn't look quite right. Try some new elements");
+
+                                  // Calls to the chemical system
+                                  combinationResult = CombinChems(chemInput1, chemInput2);
+                                  Console.WriteLine();
+                                  Console.WriteLine(combinationResult); // first chemical reaction
 
                                 }
+
+
+
                                 Console.WriteLine("WELL DONE!");
-                                Console.WriteLine("You have made Water")
+                                Console.WriteLine("You have made Water");
+
+                                
 
 
 

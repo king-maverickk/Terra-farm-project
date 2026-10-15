@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -281,29 +282,29 @@ _              _     _         _            _ _ os
                                 Console.WriteLine("Since the villiager requested for you to make water.");
                                 Console.WriteLine("press enter to go to the workbench");
                                 Console.ReadLine();
-                               
+
 
                                 string combinationResult = string.Empty;
                                 while (combinationResult != "Success! combining Hydrogen and Oxygen created Water!")
                                 {  // Loop that will keep asking for elements until the player makes water
-                                  Console.Clear();
-                                  
-                                  Console.WriteLine("");
-                                  Console.WriteLine("");
-                                  Console.WriteLine($"{ElementList}");
-                                  Console.WriteLine("Tip: Capitalize the first letter of the element you are entering");
-                                  Console.WriteLine("Please enter your first Element!");
-                                  string chemInput1 = Console.ReadLine();
-                                  Console.WriteLine("");
-                                  Console.WriteLine("");
-                                  Console.WriteLine("Please enter your second Element");
-                                  string chemInput2 = Console.ReadLine();
+                                    Console.Clear();
+
+                                    Console.WriteLine("");
+                                    Console.WriteLine("");
+                                    Console.WriteLine($"{ElementList}");
+                                    Console.WriteLine("Tip: Capitalize the first letter of the element you are entering");
+                                    Console.WriteLine("Please enter your first Element!");
+                                    string chemInput1 = Console.ReadLine();
+                                    Console.WriteLine("");
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Please enter your second Element");
+                                    string chemInput2 = Console.ReadLine();
 
 
-                                  // Calls to the chemical system
-                                  combinationResult = CombinChems(chemInput1, chemInput2);
-                                  Console.WriteLine();
-                                  Console.WriteLine(combinationResult); // first chemical reaction
+                                    // Calls to the chemical system
+                                    combinationResult = CombinChems(chemInput1, chemInput2);
+                                    Console.WriteLine();
+                                    Console.WriteLine(combinationResult); // first chemical reaction
 
                                 }
 
@@ -333,6 +334,86 @@ _              _     _         _            _ _ os
                                         Console.WriteLine("Please press enter to continue...");
                                         Console.ReadLine();
                                         Console.Clear();
+
+                                        Console.WriteLine("CHAPTER 3: The world of chemistry");
+                                        Console.WriteLine("press enter to continue...");
+                                        Console.ReadLine();
+
+                                        Console.Clear();
+                                        Console.WriteLine("You have created water and saved the town from dying of thirst");
+                                        Console.WriteLine("The town is extremely grateful for your actions");
+                                        Console.WriteLine("You have proven yourself to be a worthy chemist");
+                                        Console.WriteLine("You hve access to the entire lab and all the elements within it");
+                                        Console.WriteLine("You have access to the recipe book");
+                                        Console.WriteLine("Just go to the lab to use it");
+                                        Console.WriteLine("You currently have the choice to go to the Lab, go around the Village or go to the Forest");
+                                        Console.WriteLine("Where do you want to go?");
+                                        Console.WriteLine("1. Lab");
+                                        Console.WriteLine("2. Village");
+                                        Console.WriteLine("3. Forest");
+                                        string input = Console.ReadLine();// The player can choose where to go next
+                                                                          // three options the player can choose 
+
+
+                                        switch (input)
+                                        {
+                                            case "1":
+                                                Console.Clear();
+                                                Console.WriteLine("You have chosen to go to the Lab");
+                                                Console.WriteLine("You have access to all the elements within it");
+                                                Console.WriteLine("You can use the recipe book to create new elements");
+                                                Console.WriteLine("press enter to continue...");
+                                                Console.ReadLine();
+                                                Console.Clear();
+                                                Console.WriteLine(" you enter the lab ready to craeat things beyond your wildest dreams");
+                                                Console.WriteLine("You have access to the recipe book and all the elements within it");
+                                                Console.WriteLine("would you like to access your the recipe book? "); 
+                                                Console.WriteLine("Yes/No");
+                                                Console.ReadLine();
+                                                if (ReadYes())
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("You have chosen to access the recipe book");
+                                                    Console.WriteLine($"{RecipeBook}");
+                                                    Console.WriteLine("press enter to continue...");
+                                                    Console.ReadLine();
+                                                }
+                                                else
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine(" Thats odd, Why come to the lab then?");
+                                                    Console.WriteLine("cause you're a silly goose?");
+                                                    Console.WriteLine("Or maybe you just want to go to the forest or village?");
+                                                    Console.ReadLine();
+                                                }
+
+
+
+
+
+
+                                                break;
+
+                                            case "2":
+
+                                                Console.Clear();
+                                                Console.WriteLine("You have chosen to go to the Village");
+                                                Console.WriteLine("You can talk to the villagers and learn more about them");
+                                                Console.WriteLine("press enter to continue...");
+                                                Console.ReadLine();
+                                                break;
+
+                                            case "3":
+                                                Console.Clear();
+                                                Console.WriteLine("You have chosen to go to the Forest");
+                                                Console.WriteLine("You can explore the forest and find new elements");
+                                                Console.WriteLine("press enter to continue...");
+                                                Console.ReadLine();
+                                                break;
+
+
+                                        }
+
 
 
 
@@ -368,6 +449,7 @@ _              _     _         _            _ _ os
 
 
                                 }
+                            }
                         }
                         else
                         {
@@ -379,39 +461,39 @@ _              _     _         _            _ _ os
                             Console.ReadLine();
                             badEnding++;
                         }
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("You ignore the man and start talking to the attendant that was waiting for you");
+                            Console.WriteLine("You follow her and lose her");
+                            Console.WriteLine("you are lost in the halls and don't make it out");
+                            Console.WriteLine("please press enter to restart...");// you get lost in the halls
+                            Console.ReadLine();
+                            badEnding++;
+                        }
+
                     }
                     else
                     {
                         Console.Clear();
-                        Console.WriteLine("You ignore the man and start talking to the attendant that was waiting for you");
-                        Console.WriteLine("You follow her and lose her");
-                        Console.WriteLine("you are lost in the halls and don't make it out");
-                        Console.WriteLine("please press enter to restart...");// you get lost in the halls
-                        Console.ReadLine();
+                        Console.WriteLine("You sit on the steps of the building and the town dies of thirst");
+                        Console.WriteLine("You Were supposed to be the hero of the town, but you failed them");
+                        Console.WriteLine("shame on you"); // you don't enter the building
                         badEnding++;
                     }
-
                 }
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("You sit on the steps of the building and the town dies of thirst");
-                    Console.WriteLine("You Were supposed to be the hero of the town, but you failed them");
-                    Console.WriteLine("shame on you"); // you don't enter the building
+                    Console.WriteLine("Why are you dressed so weirdly then?"); // you don't agree to being the person they are looking for
+                    Console.WriteLine("Actually, just get out of here then!");
                     badEnding++;
+                    Console.WriteLine("Please press enter");
+                    Console.ReadLine();
                 }
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Why are you dressed so weirdly then?"); // you don't agree to being the person they are looking for
-                Console.WriteLine("Actually, just get out of here then!");
-                badEnding++;
-                Console.WriteLine("Please press enter");
-                Console.ReadLine();
-            }
-        }
-
+            } 
+        
         // Helper that asks a prompt and returns true for Yes, false for No.
         private static bool PromptYesNo(string prompt)
         {

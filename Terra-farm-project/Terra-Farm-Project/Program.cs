@@ -190,7 +190,7 @@ _              _     _         _            _ _ os
             if (ReadYes())
             {
                 Console.WriteLine("Well of course you are, look at you");
-                Console.WriteLine("Now hurry along to the lab");
+                Console.WriteLine("Now hurry along to the house");
                 Console.WriteLine("Please press enter...");
                 Console.ReadLine();
                 Console.Clear();
@@ -340,7 +340,7 @@ _              _     _         _            _ _ os
                                         Console.WriteLine("press enter to continue...");
                                         Console.ReadLine();
 
-                                        Console.Clear();
+                                        Console.Clear(); // start of chapter 3
                                         Console.WriteLine("You have created water and saved the town from dying of thirst");
                                         Console.WriteLine("The town is extremely grateful for your actions");
                                         Console.WriteLine("You have proven yourself to be a worthy chemist");
@@ -352,6 +352,8 @@ _              _     _         _            _ _ os
                                         Console.WriteLine("1. Lab");
                                         Console.WriteLine("2. Village");
                                         Console.WriteLine("3. Forest");
+                                        Console.WriteLine("Please enter your answer");
+                                        Console.ReadLine();
                                         string input = Console.ReadLine();// The player can choose where to go next
                                                                           // three options the player can choose 
 
@@ -399,11 +401,45 @@ _              _     _         _            _ _ os
                                                         {
 
                                                                 case "2":
-                                                                Console.Clear(); // village choice from lab
+                                                                Console.Clear(); // village choice from lab (remember to add the same story to the orginsl village choice)
                                                                 Console.WriteLine("You have chosen to go to the Village");
                                                                 Console.WriteLine("You can talk to the villagers and learn more about them");
                                                                 Console.WriteLine("press enter to continue...");
                                                                 Console.ReadLine();
+                                                                Console.Clear();
+                                                                Console.WriteLine("You go into the Village and a crowd of people start gathering around you");
+                                                                Console.WriteLine("You can talk to them or you could turn back and choose lab or village?");
+                                                                Console.WriteLine("Y/N");
+                                                                if (Console.ReadLine() == "Y")
+                                                                {
+                                                                    Console.Clear();
+                                                                    Console.WriteLine("you have chosen to tunr back but where shall you go?");
+                                                                    Console.WriteLine("1. Lab");
+                                                                    Console.WriteLine("2. forest");
+                                                                    Console.WriteLine("Please enter your choice");
+
+
+
+                                                                }
+                                                                else // you talk to the villagers 
+                                                                {
+                                                                    Console.Clear();
+                                                                    Console.WriteLine("You have chosen to talk to the villagers");
+                                                                    Console.WriteLine("They tell you about their lives and how they are struggling to survive");
+                                                                    Console.WriteLine("They ask you for help and you agree to help them");
+                                                                    Console.WriteLine("You have completed your first quest!");
+                                                                    Console.WriteLine("press enter to continue...");
+                                                                    Console.ReadLine();
+                                                                }
+
+
+
+
+
+
+
+
+
                                                                 break;
 
 
@@ -415,25 +451,13 @@ _              _     _         _            _ _ os
                                                                 Console.ReadLine();
                                                                 break;
 
+                                                    
+                                                        }
 
-
-
-
-                                                    }
-                                                   
-
+                                                        
                                                          
-
-
-
-
-
-
-
-
-
                                                     }
-
+                                                    // else goes here if they want to stay in the lab  
 
 
 
@@ -441,15 +465,15 @@ _              _     _         _            _ _ os
 
 
                                                 }
-                                                   break; 
+                                                
 
-
+                                                break;
 
 
 
                                                     
 
-                                            case "2":
+                                            case "2":// you go to the village
 
                                                 Console.Clear();
                                                 Console.WriteLine("You have chosen to go to the Village");
@@ -458,7 +482,7 @@ _              _     _         _            _ _ os
                                                 Console.ReadLine();
                                                 break;
 
-                                            case "3":
+                                            case "3": // you go to the forest
                                                 Console.Clear();
                                                 Console.WriteLine("You have chosen to go to the Forest");
                                                 Console.WriteLine("You can explore the forest and find new elements");

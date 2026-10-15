@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -358,6 +359,7 @@ _              _     _         _            _ _ os
                                         switch (input)
                                         {
                                             case "1":
+
                                                 Console.Clear();
                                                 Console.WriteLine("You have chosen to go to the Lab");
                                                 Console.WriteLine("You have access to all the elements within it");
@@ -367,10 +369,10 @@ _              _     _         _            _ _ os
                                                 Console.Clear();
                                                 Console.WriteLine(" you enter the lab ready to craeat things beyond your wildest dreams");
                                                 Console.WriteLine("You have access to the recipe book and all the elements within it");
-                                                Console.WriteLine("would you like to access your the recipe book? "); 
+                                                Console.WriteLine("would you like to access your the recipe book? ");
                                                 Console.WriteLine("Yes/No");
                                                 Console.ReadLine();
-                                                if (ReadYes())
+                                                if (ReadYes()) // you stay in the lab and access the recipe book
                                                 {
                                                     Console.Clear();
                                                     Console.WriteLine("You have chosen to access the recipe book");
@@ -384,15 +386,68 @@ _              _     _         _            _ _ os
                                                     Console.WriteLine(" Thats odd, Why come to the lab then?");
                                                     Console.WriteLine("cause you're a silly goose?");
                                                     Console.WriteLine("Or maybe you just want to go to the forest or village?");
-                                                    Console.ReadLine();
+                                                    Console.WriteLine("Y/N");
+                                                    Console.ReadLine();// lab chance to turn back and pick forest or village
+                                                    if (Console.ReadLine() == "Y")
+                                                    {
+
+
+
+                                                          string input2 = Console.ReadLine();
+
+                                                          switch (input2)
+                                                        {
+
+                                                                case "2":
+                                                                Console.Clear(); // village choice from lab
+                                                                Console.WriteLine("You have chosen to go to the Village");
+                                                                Console.WriteLine("You can talk to the villagers and learn more about them");
+                                                                Console.WriteLine("press enter to continue...");
+                                                                Console.ReadLine();
+                                                                break;
+
+
+                                                                case "3":
+                                                                Console.Clear(); // forest choice from lab
+                                                                Console.WriteLine("You have chosen to go to the Forest");
+                                                                Console.WriteLine("You can explore the forest and find new elements");
+                                                                Console.WriteLine("press enter to continue...");
+                                                                Console.ReadLine();
+                                                                break;
+
+
+
+
+
+                                                    }
+                                                   
+
+                                                         
+
+
+
+
+
+
+
+
+
+                                                    }
+
+
+
+
+
+
+
                                                 }
+                                                   break; 
 
 
 
 
 
-
-                                                break;
+                                                    
 
                                             case "2":
 

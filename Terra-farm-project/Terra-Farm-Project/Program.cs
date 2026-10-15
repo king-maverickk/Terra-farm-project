@@ -354,13 +354,13 @@ _              _     _         _            _ _ os
                                         Console.WriteLine("3. Forest");
                                         Console.WriteLine("Please enter your answer");
                                         Console.ReadLine();
-                                        string input = Console.ReadLine();// The player can choose where to go next
+                                        int input = int.Parse(Console.ReadLine()); // The player can choose where to go next   (There is a bug here that does't allow the player to input anything)
                                                                           // three options the player can choose 
 
 
                                         switch (input)
                                         {
-                                            case "1":
+                                            case 1:
 
                                                 Console.Clear();
                                                 Console.WriteLine("You have chosen to go to the Lab");
@@ -395,12 +395,12 @@ _              _     _         _            _ _ os
 
 
 
-                                                          string input2 = Console.ReadLine();
+                                                          int input2 = int.Parse(Console.ReadLine());
 
                                                           switch (input2)
                                                         {
 
-                                                                case "2":
+                                                                case 1:
                                                                 Console.Clear(); // village choice from lab (remember to add the same story to the orginsl village choice)
                                                                 Console.WriteLine("You have chosen to go to the Village");
                                                                 Console.WriteLine("You can talk to the villagers and learn more about them");
@@ -443,7 +443,7 @@ _              _     _         _            _ _ os
                                                                 break;
 
 
-                                                                case "3":
+                                                                case 3:
                                                                 Console.Clear(); // forest choice from lab
                                                                 Console.WriteLine("You have chosen to go to the Forest");
                                                                 Console.WriteLine("You can explore the forest and find new elements");
@@ -473,7 +473,7 @@ _              _     _         _            _ _ os
 
                                                     
 
-                                            case "2":// you go to the village
+                                            case 2: // you go to the village
 
                                                 Console.Clear();
                                                 Console.WriteLine("You have chosen to go to the Village");
@@ -482,7 +482,7 @@ _              _     _         _            _ _ os
                                                 Console.ReadLine();
                                                 break;
 
-                                            case "3": // you go to the forest
+                                            case 3: // you go to the forest
                                                 Console.Clear();
                                                 Console.WriteLine("You have chosen to go to the Forest");
                                                 Console.WriteLine("You can explore the forest and find new elements");

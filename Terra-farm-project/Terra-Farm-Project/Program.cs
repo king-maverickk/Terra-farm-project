@@ -45,7 +45,14 @@ namespace Terra_Farm_Project
         }
 
 
-        public Encounters() { }
+        public Encounters()
+        { 
+            
+        
+                      
+        
+        
+        }
 
         static void Main(string[] args)
         {
@@ -64,6 +71,117 @@ namespace Terra_Farm_Project
 
                 Console.Clear();
             }
+
+
+
+         // Enviroments     This is the methods section
+
+
+        private static void Labscene(string playerName, string RecipeBook) // lab enviroment
+        {
+
+            Console.Clear();
+            Console.WriteLine("You have chosen to go to the Lab");
+            Console.WriteLine("You have access to all the elements within it");
+            Console.WriteLine("You can use the recipe book to create new elements");
+            Console.WriteLine("press enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine(" you enter the lab ready to craeat things beyond your wildest dreams");
+            Console.WriteLine("You have access to the recipe book and all the elements within it");
+            Console.WriteLine("would you like to access your the recipe book? ");
+            Console.WriteLine("Y/N");
+            Console.ReadLine();
+            if (ReadYes()) // you stay in the lab and access the recipe book
+            {
+                Console.Clear();
+                Console.WriteLine("You have chosen to access the recipe book");
+                Console.WriteLine($"{RecipeBook}");
+                Console.WriteLine("press enter to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("You have access to the recipe book and all the combinations within it");
+                Console.WriteLine("You can use the recipe book to create new elements");
+                Console.WriteLine("you to get more elements you must explore the world");
+                Console.WriteLine("The world is fully of different elements and the possibilities are endless");
+                Console.WriteLine("You can try out the existing elements and see what you can create");
+                Console.WriteLine("When you're done you can go back to the world");
+                Console.WriteLine("are you ready to continue?");
+                Console.WriteLine("Y/N");
+                if (Console.ReadLine() == "Y") //The player can do whatever they want in the lab and then go back to the world 
+                {
+                    Console.Clear();
+                    Console.WriteLine("You have chosen to continue your journey");
+                    Console.WriteLine("You will be faced with many challenges and obstacles");
+                    Console.WriteLine("But you are ready for them!");
+                    Console.WriteLine($"Good luck on your journey, {playerName}");
+                    Console.WriteLine("Please press enter to continue...");
+                    Console.ReadLine();
+                }
+                else // chose to go back to the world
+                {
+                    Console.Clear();
+                    Console.WriteLine("You have chosen to end your journey here");
+                    Console.WriteLine("It is sad to see you go");
+                    Console.WriteLine("But the K game will always be there for you");
+                    Console.WriteLine($"Goodbye, {playerName}");
+                    Console.WriteLine("Please press enter to end the game...");
+                    Console.ReadLine();
+                    return;
+                }
+
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine(" Thats odd, Why come to the lab then?");
+                Console.WriteLine("cause you're a silly goose?");
+                Console.WriteLine("Or maybe you just want to go to the forest or village?");
+                Console.WriteLine("Y/N");
+                Console.ReadLine(); // lab chance to turn back and pick forest or village
+
+            }
+
+        }
+
+       private static void ForestScene(string playerName, string RecipeBook) // Forest choice
+        {
+
+            Console.Clear();
+            Console.WriteLine("You have chosen to go to the Forest");
+            Console.WriteLine("You can explore the forest and find new elements");
+            Console.WriteLine("press enter to continue...");
+            Console.ReadLine();
+
+
+        }
+
+
+        private static void VillageScene(string playerName, string RecipeBook) // village choice 
+        {
+
+
+            Console.Clear();
+            Console.WriteLine("You have chosen to go to the Forest");
+            Console.WriteLine("You can explore the forest and find new elements");
+            Console.WriteLine("press enter to continue...");
+            Console.ReadLine();
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -359,134 +477,24 @@ _              _     _         _            _ _ os
 
                                         switch (input)
                                         {
-                                            case 1:
-
-                                                Console.Clear();
-                                                Console.WriteLine("You have chosen to go to the Lab");
-                                                Console.WriteLine("You have access to all the elements within it");
-                                                Console.WriteLine("You can use the recipe book to create new elements");
-                                                Console.WriteLine("press enter to continue...");
-                                                Console.ReadLine();
-                                                Console.Clear();
-                                                Console.WriteLine(" you enter the lab ready to craeat things beyond your wildest dreams");
-                                                Console.WriteLine("You have access to the recipe book and all the elements within it");
-                                                Console.WriteLine("would you like to access your the recipe book? ");
-                                                Console.WriteLine("Y/N");
-                                                Console.ReadLine();
-                                                if (ReadYes()) // you stay in the lab and access the recipe book
+                                            case 1: // you go to the lab
                                                 {
-                                                    Console.Clear();
-                                                    Console.WriteLine("You have chosen to access the recipe book");
-                                                    Console.WriteLine($"{RecipeBook}");
-                                                    Console.WriteLine("press enter to continue...");
-                                                    Console.ReadLine();
-                                                }
-                                                else
-                                                {
-                                                    Console.Clear();
-                                                    Console.WriteLine(" Thats odd, Why come to the lab then?");
-                                                    Console.WriteLine("cause you're a silly goose?");
-                                                    Console.WriteLine("Or maybe you just want to go to the forest or village?");
-                                                    Console.WriteLine("Y/N");
-                                                    Console.ReadLine();// lab chance to turn back and pick forest or village
-                                                    if (Console.ReadLine() == "Y")
-                                                    {
-
-
-
-                                                          int input2 = int.TryParse(Console.ReadLine(), out input2) ? input2 : 0;
-
-                                                          switch (input2)
-                                                        {
-
-                                                                case 1:
-                                                                Console.Clear(); // village choice from lab (remember to add the same story to the orginsl village choice)
-                                                                Console.WriteLine("You have chosen to go to the Village");
-                                                                Console.WriteLine("You can talk to the villagers and learn more about them");
-                                                                Console.WriteLine("press enter to continue...");
-                                                                Console.ReadLine();
-                                                                Console.Clear();
-                                                                Console.WriteLine("You go into the Village and a crowd of people start gathering around you");
-                                                                Console.WriteLine("You can talk to them or you could turn back and choose lab or village?");
-                                                                Console.WriteLine("Y/N");
-                                                                if (Console.ReadLine() == "Y")
-                                                                {
-                                                                    Console.Clear();
-                                                                    Console.WriteLine("you have chosen to tunr back but where shall you go?");
-                                                                    Console.WriteLine("1. Lab");
-                                                                    Console.WriteLine("2. forest");
-                                                                    Console.WriteLine("Please enter your choice");
-
-
-
-                                                                }
-                                                                else // you talk to the villagers 
-                                                                {
-                                                                    Console.Clear();
-                                                                    Console.WriteLine("You have chosen to talk to the villagers");
-                                                                    Console.WriteLine("They tell you about their lives and how they are struggling to survive");
-                                                                    Console.WriteLine("They ask you for help and you agree to help them");
-                                                                    Console.WriteLine("You have completed your first quest!");
-                                                                    Console.WriteLine("press enter to continue...");
-                                                                    Console.ReadLine();
-                                                                }
-
-
-
-
-
-
-
-
-
-                                                                break;
-
-
-                                                                case 3:
-                                                                Console.Clear(); // forest choice from lab
-                                                                Console.WriteLine("You have chosen to go to the Forest");
-                                                                Console.WriteLine("You can explore the forest and find new elements");
-                                                                Console.WriteLine("press enter to continue...");
-                                                                Console.ReadLine();
-                                                                break;
-
-                                                    
-                                                        }
-
-                                                        
-                                                         
-                                                    }
-                                                    // else goes here if they want to stay in the lab  
-
-
-
-
-
+                                                    Labscene(playerName, RecipeBook); // sends player to the metho up top
+                                                        break;
 
                                                 }
                                                 
-
-                                                break;
-
-
-
-                                                    
+  
 
                                             case 2: // you go to the village
+                                                {
+                                                    VillageScene(playerName, RecipeBook);
+                                                    break;
+                                                }
 
-                                                Console.Clear();
-                                                Console.WriteLine("You have chosen to go to the Village");
-                                                Console.WriteLine("You can talk to the villagers and learn more about them");
-                                                Console.WriteLine("press enter to continue...");
-                                                Console.ReadLine();
-                                                break;
 
                                             case 3: // you go to the forest
-                                                Console.Clear();
-                                                Console.WriteLine("You have chosen to go to the Forest");
-                                                Console.WriteLine("You can explore the forest and find new elements");
-                                                Console.WriteLine("press enter to continue...");
-                                                Console.ReadLine();
+                                                ForestScene(playerName, RecipeBook);
                                                 break;
 
 

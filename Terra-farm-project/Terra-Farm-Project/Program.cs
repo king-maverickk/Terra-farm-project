@@ -353,8 +353,7 @@ _              _     _         _            _ _ os
                                         Console.WriteLine("2. Village");
                                         Console.WriteLine("3. Forest");
                                         Console.WriteLine("Please enter your answer");
-                                        Console.ReadLine();
-                                        int input = int.Parse(Console.ReadLine()); // The player can choose where to go next   (There is a bug here that does't allow the player to input anything)
+                                        int input = int.TryParse(Console.ReadLine(), out input) ? input : 0; // The player can choose where to go next   
                                                                           // three options the player can choose 
 
 
@@ -372,7 +371,7 @@ _              _     _         _            _ _ os
                                                 Console.WriteLine(" you enter the lab ready to craeat things beyond your wildest dreams");
                                                 Console.WriteLine("You have access to the recipe book and all the elements within it");
                                                 Console.WriteLine("would you like to access your the recipe book? ");
-                                                Console.WriteLine("Yes/No");
+                                                Console.WriteLine("Y/N");
                                                 Console.ReadLine();
                                                 if (ReadYes()) // you stay in the lab and access the recipe book
                                                 {
@@ -395,7 +394,7 @@ _              _     _         _            _ _ os
 
 
 
-                                                          int input2 = int.Parse(Console.ReadLine());
+                                                          int input2 = int.TryParse(Console.ReadLine(), out input2) ? input2 : 0;
 
                                                           switch (input2)
                                                         {
